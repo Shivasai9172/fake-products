@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="Styles.css">
+    <title>Add product</title>
+</head>
+<body>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <div class="header">
+        <div>
+        <div class='header'>
+            <p class="heading"><a href="/index.html">Counterfeit Products</a></p>
+            <div class='nav-bar'>
+              <ul class='nav'>
+                <li><a href="/index.html">Home</a></li>
+                <li><a class="active"  href="/newProduct.html">Manufacturer</a></li>
+                <li><a href="/Ownership.html">Seller</a></li>
+                <li><a href="/Details.html">Consumer</a></li>
+                <li><a href="/about.html">About us</a></li>
+                
+                
+                </ul>
+            </div>
+          </div>
+        <div>
+            <img src="fake.jpg" class="fake">
+    <div class='contentAdjust'>
+        <script>
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner();
+            abi = [
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "unique_id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "prod_name",
+                    "type": "string"
+                }
+            ],
+            "name": "add_product_details",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "product_id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "address",
+                    "name": "new_address",
+                    "type": "address"
+                }
+            ],
+            "name": "transfer_owner_ship",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "name": "all_product_details",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "unique_product_id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "curr_owner_address",
+                    "type": "address"
+                },
+                {
+                    "internalType": "enum fakeProductDetection.owner_status",
+                    "name": "curr_owner_state",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]
+    </script>
+        <p class='textAdjust'>Product ID:</p>
+        <input type="number" id="product_id" class="inputAdjust" placeholder="Enter Unique Product Id"/><br><br>
+        <p class='textAdjust'>Product Name:</p>
+        <input type="text" id="product_name" class="inputAdjust" placeholder="Enter Product Name"/>
+        <br>
+        <button class='button-20' onclick="generateQR()">Generate QR</button>
+        <br>
+        <button class='button-20' onclick="connectToWallet()">Connect Wallet</button>
+        <br>
+        <button class='button-20' onclick="insertIntoBlockChain()">Add Product To BlockChain</button>
+        <br>
+        <img src="" id="qr-img" alt="">
+        </div>
+</body>
+</html>

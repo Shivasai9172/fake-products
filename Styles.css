@@ -1,0 +1,216 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins);
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: "Poppins",sans-serif;
+}
+/* Heading */
+.header{
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  background: rgb(39, 31, 31);
+
+  /* backdrop-filter: blur(10px);
+  border-bottom: 3px solid rgba(255,255,255, .2); */
+}
+.heading{
+  font-weight: bold;
+  font-size: 30px;
+  position: fixed;
+  color: white;
+  top: 10px;
+  left: 80px;
+  cursor: pointer;
+}
+.heading>a{
+  color: white;
+  text-decoration: none;
+  position: fixed;
+  top: 20px;
+}
+.nav{
+  display: flex;
+    list-style: none;
+    position: fixed;
+    top: 27px;
+    color: white;
+    right: 0px;
+}
+ul>li{
+  margin-right: 50px;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+}
+ul>li>a{
+  color: white;
+  text-decoration: none;
+}
+ul>li>a::before{
+  font-weight: 100;
+  color: white;
+}
+ul>li>a:hover{
+  color:#3733E5;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+.active{
+  color: #3733E5;
+  text-decoration: underline;
+}
+/* Button styling */
+.button-20 {
+    background-color: #4D4AE8;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+    border: 1px solid #4D4AE8;
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter,sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 15px;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-transform: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-20:focus:not(:focus-visible),
+  .button-20:focus {
+    outline: 0;
+  }
+  
+  .button-20:hover {
+    background-color: #3733E5;
+    border-color: #3733E5;
+  }
+  
+  .button-20:focus {
+    background-color: #413FC5;
+    border-color: #3E3BBA;
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+  }
+  
+  .button-20:active {
+    background-color: #3E3BBA;
+    background-image: none;
+    border-color: #3A38AE;
+    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+  }
+  
+  .button-20:active:focus {
+    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+  }
+  
+  .button-20:disabled {
+    background-image: none;
+    box-shadow: none;
+    opacity: .65;
+    pointer-events: none;
+  }
+  .button-20 a{
+      text-decoration: none;
+      font-weight: 500;
+      color: white;
+  }
+.text{
+  color: #3733E5;
+}
+.container{
+  border: solid white;
+    border-radius: 10px;
+    width: 500px;
+    height: 160px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: fixed;
+    right: 60px;
+    text-align: center;
+    top: 45%;
+}
+/* Image styling */
+.fake{
+  position: fixed;
+  z-index: -1;
+  top: 40px;
+  width: 1170px;
+  height: 945px;
+}
+/* About Page */
+.aboutImage{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 95%;
+    bottom: 0px;
+}
+h3{
+  text-align: center;
+}
+.aboutInfo{
+  border: solid;
+  border-color: white;
+  text-align: center;
+  top: 170px;
+  right: 530px;
+  height: 570px;
+  width: 650px;
+  z-index: -1;
+  position: fixed;
+  font-size: 25px;
+  backdrop-filter: blur(100px);
+  color: black;
+  padding: 1%;
+  letter-spacing: 1px;
+  border-radius: 48px;
+  }
+  /* newProduct page */
+  .contentAdjust{
+    border: solid white ;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: fixed;
+    right: 10%;
+    top: 28%;
+    z-index: -1;
+    text-align: center;
+  }
+  .OwnershipAdjust{
+    border: solid white ;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    position: absolute;
+    right: 10%;
+    top: 17%;
+    z-index: -1;
+    text-align: center;
+  }
+  .textAdjust{
+    font-size: 15px;
+    font-weight: 100;
+  }
+  .inputAdjust{
+    padding: 3px;
+    width: 250px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .qr-reader{
+    width: 100px;
+    height: 100px;
+  }

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <script src="app.js"></script>
+    <title>Product details</title>
+</head>
+<body>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script>
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      abi = [
+{
+  "inputs": [
+    {
+      "internalType": "uint32",
+      "name": "unique_id",
+      "type": "uint32"
+    },
+    {
+      "internalType": "string",
+      "name": "prod_name",
+      "type": "string"
+    }
+  ],
+  "name": "add_product_details",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+},
+{
+  "inputs": [
+    {
+      "internalType": "uint32",
+      "name": "product_id",
+      "type": "uint32"
+    },
+    
+    {
+      "internalType": "address",
+      "name": "new_address",
+      "type": "address"
+    }
+  ],
+  "name": "transfer_owner_ship",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+},
+{
+  "inputs": [
+    {
+      "internalType": "uint32",
+      "name": "",
+      "type": "uint32"
+    }
+  ],
+  "name": "all_product_details",
+  "outputs": [
+    {
+      "internalType": "uint32",
+      "name": "unique_product_id",
+      "type": "uint32"
+    },
+    {
+      "internalType": "string",
+      "name": "unique_product_name",
+      "type": "string"
+    },
+    {
+      "internalType": "address",
+      "name": "curr_owner_address",
+      "type": "address"
+    },
+    {
+      "internalType": "enum fakeProductDetection.owner_status",
+      "name": "curr_owner_state",
+      "type": "uint8"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+},
+{
+  "inputs": [],
+  "name": "owner",
+  "outputs": [
+    {
+      "internalType": "address",
+      "name": "",
+      "type": "address"
+    }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+}
+]
+
+
+  </script>
+  <div>
+    <div class='header'>
+      <p class="heading"><a href="/index.html">Counterfeit Products</a></p>
+      <div class='nav-bar'>
+        <ul class='nav'>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/newProduct.html">Manufacturer</a></li>
+          <li><a href="/Ownership.html">Seller</a></li>
+          <li><a class="active"  href="/Details.html">Consumer</a></li>
+          <li><a href="/about.html">About us</a></li>
+          
+          
+          </ul>
+      </div>
+    </div>
+        <div>
+            <img src="fake.jpg" class="fake">
+            <div>
+                <div class='contentAdjust'>
+                    <div class="row" id="scan">
+                        <div id="qr-reader" style="width: 350px">hi</div>
+                    </div>
+                    <p class='textAdjust' for="product_id">Product ID:</p>
+                    <input type="text" class='inputAdjust' id="product_id_t" placeholder="Enter product ID"/><br><br>
+                    <p class='textAdjust' for="product_name">Product Name:</p>
+                    <input type="text" class='inputAdjust' id="product_name_t" placeholder="Enter product name"/><br><br>
+                    
+                </div></div>
+                <script>
+                    async function onScanSuccess(decodedText, decodedResult) {
+                      var product_id = decodedResult.decodedText;
+                      document.getElementById("product_id_t").value = product_id;
+                    //   var product_name = decodedResult.decodedText;
+                    //   document.getElementById("product_name_t").value = product_name;
+                    }
+                    var html5QrcodeScanner = new Html5QrcodeScanner("qr-reader", { fps: 10, qrbox: 250 });
+                    html5QrcodeScanner.render(onScanSuccess);
+                </script>
+            </div>
+    
+</body>
+</html>
